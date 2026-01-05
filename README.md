@@ -1,104 +1,83 @@
-# Frontend Starter (Gulp · Pug · SCSS)
+# FORMA — Jewelry Brand Website
 
-A clean frontend starter template focused on structured thinking,
-clear separation of concerns, and a scalable approach to static websites.
+A frontend project for a contemporary jewelry brand focused on style, form, and craftsmanship.  
+The website emphasizes clean structure, accessibility, and semantic markup.
 
-This repository prioritizes architecture and maintainability over frameworks,
-making it suitable for real projects and long-term growth.
-
----
-
-## Key Ideas
-
--   Clear separation between layout, sections, and components
--   Predictable and readable project structure
--   SCSS architecture aligned with markup structure
--   JavaScript prepared for gradual transition to ES modules
--   Minimal setup without unnecessary complexity
+**Content language:** German  
+**Project focus:** frontend architecture and layout quality
 
 ---
 
-## Tech Stack
+## ✨ Project Overview
 
--   Gulp 5 — task runner
--   Pug — HTML templating
--   SCSS (Sass) — styling
--   PostCSS + Autoprefixer
--   BrowserSync — local development server
+FORMA is a concept website for a contemporary jewelry brand.  
+The project is designed as a brand website rather than a traditional e-commerce store, focusing on aesthetics, identity, and values.
 
 ---
 
-## Project Structure
+## 🧩 Key Frontend Principles
 
-src/
-├── pug/ Pug templates and components  
-│ ├── layouts/ Global page layouts  
-│ ├── templates/ Page templates  
-│ ├── blocks/ Page-level sections  
-│ └── components/ Reusable UI components (mixins)  
-│
-├── scss/ Styles mirrored to Pug structure  
-│ ├── utils/ Variables and mixins  
-│ ├── base/ Reset and base styles  
-│ ├── layout/ Page-level layout styles  
-│ ├── blocks/ Section styles  
-│ ├── components/ Component styles  
-│ └── style.scss Single SCSS entry point  
-│
-├── js/ JavaScript entry point and future modules  
-│ ├── modules/ Feature-based modules (optional)  
-│ ├── services/ Helpers and services  
-│ └── main.js Application entry file  
-│
-├── img/ Images and icons  
-│ ├── icons/ SVG icons and sprite  
-│ └── images/ Content images  
-│
-└── fonts/ Local font files
+-   **Semantic HTML5**  
+    Clear document structure using meaningful tags (`header`, `main`, `section`, `article`, `nav`, `footer`) to improve accessibility and maintainability.
+
+-   **BEM methodology**  
+    Scalable and predictable CSS architecture using Block–Element–Modifier naming.
+
+-   **Desktop-first responsive layout**  
+    The layout is designed for large screens first and adapted for smaller viewports.
+
+-   **Responsive images with `<picture>`**  
+    Optimized image delivery for different screen sizes and resolutions.
+
+-   **Accessibility-focused markup**  
+    Logical heading hierarchy, readable typography, sufficient color contrast, and focus-visible interactive elements.
 
 ---
 
-## Development Workflow
+## 🛠 Tech Stack
 
-Install dependencies:
-
-npm install
-
-Start local development:
-
-npm run dev
-
-Build production files:
-
-npm run build
+-   HTML5 (semantic markup)
+-   CSS3 / SCSS
+-   BEM naming convention
+-   Responsive layout
+-   Native JavaScript (where applicable)
 
 ---
 
-## Code Style
+## ♿ Accessibility
 
--   Tabs indentation (width: 4)
--   Prettier for automatic formatting
--   EditorConfig enabled
--   Pug files formatted manually for clarity
+The project follows accessibility best practices, including:
 
----
+-   Semantic landmarks for assistive technologies
+-   Proper heading order without skipped levels
+-   Accessible form controls and labels
+-   Keyboard-friendly navigation
+-   Focus states for interactive elements
 
-## Notes
-
--   Development is done only in the src directory
--   dist and node_modules are excluded from version control
--   The structure is intentionally minimal and extensible
--   Suitable for small to medium static projects
+Accessibility is treated as an integral part of the layout, not an afterthought.
 
 ---
 
-## Author
+## 📐 Layout & Design
 
-Yevheniia Stetsiura  
-Frontend Developer, Germany
+-   Minimalistic visual language
+-   Emphasis on whitespace and rhythm
+-   Brand-driven typography
+-   Focus on form and material rather than product listing
 
 ---
 
-## License
+## 📎 Notes
 
-ISC
+The project focuses on frontend structure and layout quality.
+
+All texts are written in German to reflect a realistic brand scenario for the German market.
+
+The codebase is structured for readability and future scalability.
+
+---
+
+## 👤 Author
+
+Yevheniia Stetsiura
+Frontend Developer

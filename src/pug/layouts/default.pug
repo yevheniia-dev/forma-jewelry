@@ -1,20 +1,20 @@
 doctype html
 html(lang="de")
   head
-    block vars
-    meta(charset="UTF-8")
+    meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    title= siteTitle || 'Starter'
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+
+    //- SEO
+    title
+      block title
+        | FORMA — Contemporary Jewelry
+    meta(name="description" content="FORMA is a contemporary jewelry brand focused on form, material, and craftsmanship.")
+
+    //- Preload fonts
+    link(rel="preload" href="fonts/poppins-v15-latin-500.woff2" as="font" type="font/woff2" crossorigin)
+    link(rel="preload" href="fonts/cormorant-garamond-v10-latin-600.woff2" as="font" type="font/woff2" crossorigin)
+    link(rel="preload" href="fonts/cormorant-garamond-v10-latin-700.woff2" as="font" type="font/woff2" crossorigin)
+
+    //- Styles
     link(rel="stylesheet" href="css/style.css")
-
-  body.page
-    .page__header
-      include ../blocks/header
-
-    .page__main
-      block content
-
-    .page__footer
-      include ../blocks/footer
-
-    script(src="js/main.js")
