@@ -1,0 +1,18 @@
+mixin formSearch(props = {})
+  -
+    var action = props.action || '#'
+    var id = props.id || 'search'
+    var placeholder = props.placeholder || 'Suchen…'
+
+  form.header__search(action=action method='post')
+    label(for=id)
+      svg(width="14" height="14")
+        use(href="img/sprite.svg#icon-search")
+      span.visually-hidden #{props.label || 'Suche auf der Website'}
+
+    input(
+      type='search'
+      id=id
+      name='search'
+      placeholder=placeholder
+    )

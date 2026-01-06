@@ -1,24 +1,22 @@
-/* ======================================
-   Page layout
-   ====================================== */
+@use 'utils/variables' as vars;
 
 .page {
 	position: relative;
 	display: grid;
 	grid-template-rows: min-content 1fr;
-	min-width: $mobile-width;
+	min-width: vars.$mobile-width;
 	min-height: 100%;
 	margin: 0 auto;
 	padding: 0;
-	font-family: $poppins;
+	font-family: vars.$poppins;
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 500;
 	line-height: 21px;
 	letter-spacing: 0;
 	word-wrap: normal;
-	color: $text-black;
-	background-color: $basic-white;
+	color: vars.$text-black;
+	background-color: vars.$basic-white;
 
 	&--js {
 		overflow: hidden;

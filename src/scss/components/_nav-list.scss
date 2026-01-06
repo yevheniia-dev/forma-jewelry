@@ -1,0 +1,24 @@
+@use 'utils/variables' as vars;
+
+.nav-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	padding-left: 13px;
+
+	@media (max-width: vars.$desktop-width) {
+		padding: 0;
+		flex-direction: column;
+	}
+}
+
+.nav-list__item {
+	margin-bottom: 20px;
+
+	@media (max-width: vars.$desktop-width) {
+		font-family: vars.$poppins;
+		font-size: 24px;
+		line-height: 36px;
+		color: vars.$basic-white;
+	}
+}

@@ -12,8 +12,7 @@
 
 /* components */
 @use 'components/button';
-@use 'components/list';
+@use 'components/nav-list';
 
 /* blocks */
-@use 'blocks/section-a';
-@use 'blocks/section-b';
+@use 'blocks/header';

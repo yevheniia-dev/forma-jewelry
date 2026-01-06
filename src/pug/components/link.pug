@@ -1,0 +1,35 @@
+mixin link(props = {})
+  -
+    var text = props.text || ''
+
+    var baseClass = props.block || 'link'
+    var modClass = props.mod ? ' ' + baseClass + '--' + props.mod : ''
+    var parentClass = props.parent ? ' ' + props.parent + '__' + (props.elem || baseClass) : ''
+
+    var classes = baseClass + modClass + parentClass
+
+    var href = props.href || '#'
+    var attrs = props.attrs || {}
+
+  a(
+    href=href
+    class=classes
+  )&attributes(attrs)
+    if text
+      | #{text}
+    block
+
+
+//-link({
+    block: 'user-menu',
+    elem: 'modal-login',
+    parent: 'user-menu',
+    href: 'login.html',
+    text: 'Anmelden'
+  })
+
+  <a class="user-menu__modal-login" href="login.html">
+    Anmelden
+  </a>
+
+  

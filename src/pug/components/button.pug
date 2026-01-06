@@ -8,26 +8,30 @@ mixin button(props)
     var parentClass = props.parent ? ' ' + props.parent + '__button' : ''
 
     var classes = baseClass + modClass + parentClass
-    var data = props.data || {}
+    var attrs = props.attrs || {}
 
   button(
     type=type
     class=classes
-  )&attributes(data) #{text}
+  )&attributes(attrs) #{text}
 
 
-//-{
-  text: 'Buy',
-  type: 'button',              // optional
-  mod: 'primary',              // button--primary
-  parent: 'product-card',      // product-card__button
-  data: { ... }                // optional
-  } 
+//-+button({
+    text: '',
+    mod: 'icon',
+    parent: 'product-card',
+    attrs: {
+      'aria-label': 'Add to cart',
+      'data-id': '123',
+      'data-action': 'add-to-cart'
+    }
+  })
   <button
-  class="button button--primary product-card__button"
-  type="button"
-  data-id="123"
-  data-action="add-to-cart"
+    class="button button--primary product-card__button"
+    type="button"
+    aria-label="Add to cart"
+    data-id="123"
+    data-action="add-to-cart"
   >
     Buy now
   </button>

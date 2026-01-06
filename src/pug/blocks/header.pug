@@ -1,3 +1,55 @@
-header.header
-  .container
-    h2 Header
+header.page__header.header.header--nojs
+  .header__container.header__container--nojs
+    .header__top
+      +formSearch()
+
+      button.header__burger-btn(aria-label="Menü")
+        svg(width="25" height="18")
+          use(href="img/images/sprite.svg#icon-burger")
+
+      .header__logo
+        a(href="index.html" aria-label="Logo Forma" id="top")
+          img(
+            src="img/images/forma.jpg"
+            alt="Logo Forma"
+            width="100"
+            height="32"
+          )
+
+      .header__user-menu.user-menu
+        a.user-menu__modal-login(href="login.html") Anmelden
+
+        a.user-menu__cart(href="#")
+          svg.user-menu__icon(width="20" height="18")
+            use(href="img/images/sprite.svg#icon-cart")
+          p
+            | Warenkorb 
+            span(aria-live="polite") 0
+
+    .header__bottom
+      nav.header__nav#menu
+        +list({
+          block: 'nav-list',
+          parent: 'header',
+          parentElem: 'nav-list',
+          items: [
+            { text: 'Neuheiten', href: '#' },
+            { text: 'Choker', href: 'catalog.html' },
+            { text: 'Halsketten', href: '#' },
+            { text: 'Ringe', href: '#' },
+            { text: 'Ohrringe', href: '#' }
+          ]
+        })
+
+        +list({
+          block: 'sub-list',
+          parent: 'header',
+          parentElem: 'sub-nav',
+          items: [
+            { text: 'Über CH', href: '#' },
+            { text: 'Filialen & Öffnungszeiten', href: '#' },
+            { text: 'Kontakt', href: '#' }
+          ]
+        })
+
+      a.header__login(href="login.html") Anmelden

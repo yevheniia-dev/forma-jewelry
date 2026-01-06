@@ -1,44 +1,42 @@
-//- List component
-//- props:
-//- - items: array [{ text, href? }]
-//- - parent: string (optional, BEM block)
-//- - attrs: object (optional, attributes for ul)
-
-mixin list(props)
+mixin list(props = {})
   -
     var items = props.items || []
-    var parent = props.parent || null
-    var attrs = props.attrs || {}
 
-    var baseClass = 'list'
-    var parentClass = parent ? ' ' + parent + '__list' : ''
-    var classes = baseClass + parentClass
+    var block = props.block || 'list'   // nav-list / sub-list
+    var parent = props.parent || null   // header
+    var parentElem = props.parentElem || block
+
+    var parentClass = parent ? parent + '__' + parentElem : ''
+    var classes = parentClass ? parentClass + ' ' + block : block
+
+    var attrs = props.attrs || {}
 
   ul(class=classes)&attributes(attrs)
     each item in items
-      li.list__item
+      li(class=block + '__item')
         if item.href
-          a.list__link(href=item.href) #{item.text}
+          a(class=block + '__link' href=item.href) #{item.text}
         else
-          span.list__text #{item.text}
-
+          span(class=block + '__text') #{item.text}
 
 //-+list({
-    parent: 'section-a',
+    block: 'sub-list',
+    parent: 'header',
+    parentElem: 'sub-nav',
     items: [
-      { text: 'Home', href: '/' },
-      { text: 'Catalog', href: '/catalog' },
-      { text: 'Contact', href: '/contact' }
+      { text: 'Über CH', href: '#' },
+      { text: 'Filialen & Öffnungszeiten', href: '#' },
+      { text: 'Kontakt', href: '#' }
     ]
   })
-  <ul class="list section-a__list">
-    <li class="list__item">
-      <a class="list__link" href="/">Home</a>
+  <ul class="header__sub-nav sub-list">
+    <li class="sub-list__item">
+      <a href="#" class="sub-list__link">Über CH</a>
     </li>
-    <li class="list__item">
-      <a class="list__link" href="/catalog">Catalog</a>
+    <li class="sub-list__item">
+      <a href="#" class="sub-list__link">Filialen & Öffnungszeiten</a>
     </li>
-    <li class="list__item">
-      <a class="list__link" href="/contact">Contact</a>
+    <li class="sub-list__item">
+      <a href="#" class="sub-list__link">Kontakt</a>
     </li>
   </ul>
