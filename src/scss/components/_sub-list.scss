@@ -1,0 +1,18 @@
+@use 'utils/variables' as vars;
+
+.sub-list {
+	display: none;
+	font-family: vars.$poppins;
+	font-size: 18px;
+	line-height: 23px;
+	color: vars.$sub-white;
+
+	@media (max-width: vars.$desktop-width) {
+		flex-direction: column;
+	}
+}
+.sub-list__item {
+	@media (max-width: vars.$desktop-width) {
+		margin-bottom: 20px;
+	}
+}

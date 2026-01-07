@@ -64,11 +64,37 @@
 	}
 }
 
+// .header__logo {
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// 	flex-shrink: 0;
+
+// 	img {
+// 		display: block;
+// 		width: 100px;
+// 		height: auto;
+// 	}
+
+// 	@media (max-width: vars.$tablet-width) {
+// 		.header__logo img {
+// 			width: 80px;
+// 		}
+// 	}
+
+// 	@media (max-width: 480px) {
+// 		.header__logo img {
+// 			width: 64px;
+// 		}
+// 	}
+// }
+
 .header__logo {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-shrink: 0;
+	margin: 0 auto;
 
 	img {
 		display: block;
@@ -77,13 +103,13 @@
 	}
 
 	@media (max-width: vars.$tablet-width) {
-		.header__logo img {
+		& img {
 			width: 80px;
 		}
 	}
 
 	@media (max-width: 480px) {
-		.header__logo img {
+		& img {
 			width: 64px;
 		}
 	}
@@ -180,7 +206,10 @@
 }
 
 .header__user-menu {
-	width: 17.5%;
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	white-space: nowrap; // защита от переноса
 
 	@media (max-width: vars.$desktop-width) {
 		width: 4%;
