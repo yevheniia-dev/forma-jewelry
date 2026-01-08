@@ -1,0 +1,41 @@
+@use 'utils/variables' as vars;
+
+.user-menu {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	white-space: nowrap;
+}
+
+.user-menu__modal-login {
+	padding: 6px 8px;
+
+	@media (max-width: vars.$desktop-width) {
+		display: none;
+	}
+}
+
+.user-menu__cart {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 6px 8px;
+
+	p {
+		margin: 0;
+	}
+
+	@media (max-width: vars.$desktop-width) {
+		p {
+			display: none;
+		}
+	}
+}
+
+.user-menu__icon {
+	display: none;
+
+	@media (max-width: vars.$desktop-width) {
+		display: block;
+	}
+}

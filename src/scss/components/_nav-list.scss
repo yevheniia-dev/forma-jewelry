@@ -16,6 +16,7 @@
 	margin-bottom: 20px;
 
 	@media (max-width: vars.$desktop-width) {
+		margin-bottom: 0;
 		font-family: vars.$poppins;
 		font-size: 24px;
 		line-height: 36px;

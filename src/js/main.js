@@ -1,26 +1,54 @@
 (() => {
-	const header = document.querySelector('.header');
-	const headerContainer = header.querySelector('.header__container');
-	const headerToggle = header.querySelector('.header__burger-btn');
-	const listItems = header.querySelectorAll('.nav-list__link');
+	const body = document.body;
 	const page = document.querySelector('.page');
-	const btnCall = document.querySelector('.header__login');
-	const btnCallMobile = document.querySelector('.user-menu__modal-login');
+	const header = document.querySelector('.header');
+	const headerContainer = header?.querySelector('.header__container');
+	const burger = header?.querySelector('.header__burger-btn');
+	const navLinks = header?.querySelectorAll('.nav-list__link');
+	const loginDesktop = header?.querySelector('.header__login');
+	const loginMobile = header?.querySelector('.user-menu__modal-login');
 
+	if (!header || !headerContainer || !burger) {
+		return;
+	}
+
+	/* =========
+     NO-JS
+     ========= */
 	page.classList.remove('page--nojs');
 	header.classList.remove('header--nojs');
 	headerContainer.classList.remove('header__container--nojs');
 
-	const onMenuClick = function () {
-		header.classList.toggle('header--js');
-		page.classList.toggle('page--js');
-		headerContainer.classList.toggle('header__container--js');
+	/* =========
+     MENU API
+     ========= */
+	const openMenu = () => {
+		headerContainer.classList.add('header__container--js');
+		body.classList.add('body--menu-open');
+		page.classList.add('page--menu-open');
 	};
 
-	for (let i = 0; i < listItems.length; i++) {
-		listItems[i].addEventListener('click', onMenuClick);
-	}
-	btnCall.addEventListener('click', onMenuClick);
-	btnCallMobile.addEventListener('click', onMenuClick);
-	headerToggle.addEventListener('click', onMenuClick);
+	const closeMenu = () => {
+		headerContainer.classList.remove('header__container--js');
+		body.classList.remove('body--menu-open');
+		page.classList.remove('page--menu-open');
+	};
+
+	const toggleMenu = () => {
+		headerContainer.classList.contains('header__container--js')
+			? closeMenu()
+			: openMenu();
+	};
+
+	/* =========
+     EVENTS
+     ========= */
+	burger.addEventListener('click', toggleMenu);
+
+	navLinks?.forEach((link) => {
+		link.addEventListener('click', closeMenu);
+	});
+
+	loginDesktop?.addEventListener('click', closeMenu);
+	loginMobile?.addEventListener('click', closeMenu);
 })();

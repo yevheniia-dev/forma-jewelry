@@ -18,7 +18,8 @@
 	color: vars.$text-black;
 	background-color: vars.$basic-white;
 
-	&--js {
+	&--js,
+	&--menu-open {
 		overflow: hidden;
 	}
 }
