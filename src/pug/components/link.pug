@@ -2,11 +2,12 @@ mixin link(props = {})
   -
     var text = props.text || ''
 
-    var baseClass = props.block || 'link'
-    var modClass = props.mod ? ' ' + baseClass + '--' + props.mod : ''
-    var parentClass = props.parent ? ' ' + props.parent + '__' + (props.elem || baseClass) : ''
+    var block = props.block || ''
 
-    var classes = baseClass + modClass + parentClass
+    var modClass = props.mod && block ? ' ' + block + '--' + props.mod
+      : ''
+    var parentClass = props.parent ? ' ' + props.parent + '__' + (props.elem || block) : ''
+    var classes = (block + modClass + parentClass).trim()
 
     var href = props.href || '#'
     var attrs = props.attrs || {}
@@ -20,16 +21,12 @@ mixin link(props = {})
     block
 
 
-//-link({
-    block: 'user-menu',
-    elem: 'modal-login',
-    parent: 'user-menu',
-    href: 'login.html',
-    text: 'Anmelden'
+//-+link({
+  block: 'nav-list',
+  mod: 'current',
+  text: 'Neuheiten'
   })
 
-  <a class="user-menu__modal-login" href="login.html">
-    Anmelden
-  </a>
+  <a class="nav-list nav-list--current">Neuheiten</a>
 
   

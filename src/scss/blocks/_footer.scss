@@ -1,0 +1,109 @@
+@use 'utils/variables' as vars;
+@use 'base/typography';
+
+.footer {
+	color: vars.$basic-white;
+	background-color: vars.$bg-black;
+}
+
+.footer__container {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	width: 85.6%;
+	max-width: 1170px;
+	margin: 0 auto;
+	padding: 92px 0;
+
+	@media (max-width: vars.$desktop-width) {
+		width: 100%;
+		flex-wrap: wrap;
+		padding: 48px 163px 54px 45px;
+	}
+
+	@media (max-width: vars.$tablet-width) {
+		padding: 50px 15px;
+	}
+}
+
+.footer__sign-up {
+	max-width: 500px;
+	margin-right: auto;
+	flex-grow: 1;
+
+	h2 {
+		@include typography.title;
+		letter-spacing: 0.8px;
+		text-align: left;
+		margin-bottom: 8px;
+	}
+
+	p {
+		margin: 0 0 38px 0;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 21px;
+		color: vars.$placeholder-grey;
+	}
+
+	@media (max-width: vars.$desktop-width) {
+		width: 100%;
+		max-width: unset;
+		margin-right: 0;
+		margin-bottom: 44px;
+
+		h2 {
+			margin-right: 50px;
+			margin-bottom: 12px;
+		}
+
+		p {
+			margin-right: 36px;
+		}
+	}
+
+	@media (max-width: vars.$tablet-width) {
+		margin-bottom: 47px;
+
+		p {
+			margin-right: 50px;
+		}
+	}
+}
+
+.footer__nav {
+	flex-grow: 1;
+	max-width: 357px;
+	margin-top: 5px;
+	margin-right: auto;
+	margin-left: 20px;
+
+	@media (max-width: vars.$desktop-width) {
+		max-width: 66.7%;
+		margin-top: 0;
+		margin-left: 0;
+	}
+
+	@media (max-width: vars.$tablet-width) {
+		width: 100%;
+		max-width: unset;
+		margin: 0;
+		margin-bottom: 48px;
+	}
+}
+
+.footer__socials {
+	margin-top: 7px;
+	margin-left: 35px;
+
+	@media (max-width: vars.$desktop-width) {
+		margin-top: 0;
+		margin-right: -12px;
+		margin-left: 0;
+	}
+
+	@media (max-width: vars.$tablet-width) {
+		width: 100%;
+		margin: 0;
+	}
+}

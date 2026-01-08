@@ -1,0 +1,15 @@
+mixin footerNavItem(props = {})
+  -
+    var text = props.text || ''
+    var href = props.href || '#'
+
+    var parent = props.parent || 'footer-nav'
+    var elem = props.elem || 'link'
+
+  li(class=parent + '__item')
+    +link({
+      parent: parent,
+      elem: elem,
+      href: href,
+      text: text
+    })

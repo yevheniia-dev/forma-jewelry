@@ -1,0 +1,55 @@
+@use 'utils/variables' as vars;
+
+.footer-nav {
+	display: flex;
+	justify-content: space-between;
+
+	@media (max-width: vars.$tablet-width) {
+		flex-direction: column;
+	}
+}
+
+.footer-nav__list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 21px;
+
+	&:not(:last-child) {
+		margin-right: 15px;
+	}
+
+	&:last-child {
+		margin-left: auto;
+	}
+
+	@media (max-width: vars.$tablet-width) {
+		&:not(:last-child) {
+			margin-right: 0;
+			margin-bottom: 40px;
+		}
+
+		&:last-child {
+			margin-left: unset;
+		}
+	}
+}
+
+.footer-nav__item {
+	&:not(:last-child) {
+		margin-bottom: 21px;
+	}
+}
+
+.footer-nav__link {
+	&:hover,
+	&:focus {
+		opacity: 0.5;
+	}
+
+	&:active {
+		opacity: 0.7;
+	}
+}

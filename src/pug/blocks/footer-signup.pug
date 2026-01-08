@@ -1,0 +1,20 @@
+section.footer__sign-up
+  h2 Das Gute direkt in Ihrem Posteingang
+  p Neuigkeiten und Updates von CH. Kein Spam, versprochen.
+
+  form.footer__form.form-footer(
+    action="#"
+    method="POST"
+  )
+    .form-footer__container
+      label.visually-hidden(for="sign-up") E-Mail-Adresse eingeben
+      input#sign-up(
+        type="email"
+        placeholder="Ihre E-Mail-Adresse"
+        required
+      )
+
+      button.form-footer__button(type="submit")
+        span Anmelden
+        svg(width="30" height="11" aria-hidden="true")
+          use(href="img/images/sprite.svg#icon-arrow-right")

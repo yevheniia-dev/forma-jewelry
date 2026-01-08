@@ -18,3 +18,13 @@ h5,
 h6 {
 	font-weight: 400;
 }
+
+@mixin title {
+	margin: 0;
+	font-family: vars.$cormorant;
+	font-size: 34px;
+	font-weight: 700;
+	line-height: 44px;
+	letter-spacing: 0;
+	text-align: center;
+}

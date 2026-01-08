@@ -1,0 +1,70 @@
+@use 'utils/variables' as vars;
+
+.form-footer__container {
+	display: flex;
+	padding-bottom: 4px;
+	border-bottom: 1px solid vars.$basic-white;
+
+	input {
+		width: 100%;
+		padding: 5px 10px 5px 0;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 21px;
+		color: vars.$basic-white;
+		background-color: vars.$bg-black;
+		border: none;
+
+		&::placeholder {
+			color: vars.$placeholder-grey;
+		}
+
+		&:hover,
+		&:focus {
+			color: vars.$basic-black;
+			background-color: vars.$basic-white;
+			outline: none;
+		}
+	}
+
+	@media (max-width: vars.$desktop-width) {
+		input {
+			width: 77%;
+			margin-right: 29px;
+		}
+	}
+
+	@media (max-width: vars.$tablet-width) {
+		input {
+			width: 66%;
+		}
+	}
+}
+
+.form-footer__button {
+	display: flex;
+	flex-shrink: 0;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 21px;
+	color: vars.$basic-white;
+	background-color: vars.$bg-black;
+	border: none;
+	cursor: pointer;
+
+	&:hover,
+	&:focus {
+		opacity: 0.5;
+	}
+
+	&:active {
+		opacity: 0.7;
+	}
+
+	svg {
+		margin-left: 12px;
+	}
+}

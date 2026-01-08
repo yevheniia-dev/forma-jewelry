@@ -1,0 +1,30 @@
+include ../components/social-link
+
+section.footer__socials.footer-social
+  h2.visually-hidden Sie finden uns in den folgenden sozialen Netzwerken
+
+  ul.footer-social__list
+    +socialLink({
+      href: '#',
+      icon: 'icon-fb',
+      width: 8,
+      height: 15,
+      text: 'Facebook'
+    })
+
+    +socialLink({
+      href: '#',
+      icon: 'icon-inst',
+      width: 15,
+      height: 15,
+      text: 'Instagram'
+    })
+
+    +socialLink({
+      href: '#',
+      icon: 'icon-pint',
+      width: 16,
+      height: 15,
+      text: 'Pinterest'
+    })
+

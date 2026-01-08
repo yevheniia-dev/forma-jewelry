@@ -1,0 +1,18 @@
+mixin socialLink(props = {})
+  -
+    var href = props.href || '#'
+    var icon = props.icon || ''
+    var width = props.width || 16
+    var height = props.height || 16
+    var text = props.text || ''
+
+    var parent = props.parent || 'footer-social'
+    var elem = props.elem || 'link'
+    var classes = parent + '__' + elem
+
+  li(class=parent + '__item')
+    a(class=classes href=href)
+      svg(width=width height=height aria-hidden="true")
+        use(href=`img/images/sprite.svg#${icon}`)
+      if text
+        p #{text}
