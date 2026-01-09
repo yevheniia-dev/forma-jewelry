@@ -3,9 +3,9 @@
 .page {
 	position: relative;
 	display: grid;
-	grid-template-rows: min-content 1fr;
+	grid-template-rows: min-content 1fr min-content;
 	min-width: vars.$mobile-width;
-	min-height: 100%;
+	min-height: 100vh;
 	margin: 0 auto;
 	padding: 0;
 	font-family: vars.$poppins;
@@ -13,8 +13,6 @@
 	font-style: normal;
 	font-weight: 500;
 	line-height: 21px;
-	letter-spacing: 0;
-	word-wrap: normal;
 	color: vars.$text-black;
 	background-color: vars.$basic-white;
 

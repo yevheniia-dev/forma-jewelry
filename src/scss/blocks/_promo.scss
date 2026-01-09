@@ -1,0 +1,127 @@
+@use 'utils/variables' as vars;
+
+.promo {
+	position: relative;
+	padding: 181px 15px;
+	font-family: vars.$cormorant;
+	text-align: center;
+	color: vars.$basic-white;
+	background-color: vars.$basic-brown;
+	background-image: url('../img/images/bg-promo-desktop@1x.jpg');
+	background-position: center;
+	background-size: cover;
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background-color: vars.$filter-brown;
+	}
+
+	@media (min-resolution: 2dppx) {
+		background-image: url('../img/images/bg-promo-desktop@2x.jpg');
+	}
+
+	@media (max-width: vars.$desktop-width) {
+		padding-right: 37px;
+		background-image: url('../img/images/bg-promo-tablet@1x.jpg');
+	}
+
+	@media (max-width: vars.$desktop-width) and (min-resolution: 2dppx) {
+		background-image: url('../img/images/bg-promo-tablet@2x.jpg');
+	}
+
+	@media (max-width: vars.$tablet-width) {
+		padding: 190px 15px;
+		background-image: url('../img/images/bg-promo-mobile@1x.jpg');
+	}
+
+	@media (max-width: vars.$tablet-width) and (min-resolution: 2dppx) {
+		background-image: url('../img/images/bg-promo-mobile@2x.jpg');
+	}
+
+	h2 {
+		position: relative;
+		max-width: 280px;
+		margin: 0 auto;
+		font-style: italic;
+		font-weight: 400;
+		font-size: 38px;
+		line-height: 43px;
+
+		@media (max-width: vars.$tablet-width) {
+			font-size: 34px;
+			line-height: 36px;
+		}
+
+		span {
+			display: block;
+			font-weight: 700;
+			font-size: 45px;
+			font-style: normal;
+			line-height: 58px;
+			letter-spacing: 0.03em;
+			text-transform: uppercase;
+
+			@media (max-width: vars.$tablet-width) {
+				font-size: 38px;
+				line-height: 47px;
+			}
+		}
+	}
+}
+
+/* ===== PROMO CATALOG ===== */
+
+.promo--catalog {
+	padding: 92px 15px;
+	background-image: url('../img/images/bg-promo-catalog@1x.jpg');
+
+	@media (min-resolution: 2dppx) {
+		background-image: url('../img/images/bg-promo-catalog@2x.jpg');
+	}
+
+	h2 {
+		max-width: 540px;
+		font-weight: 500;
+		font-size: 22px;
+		line-height: 33px;
+
+		span {
+			font-size: 34px;
+			line-height: 44px;
+			letter-spacing: normal;
+
+			@media (max-width: vars.$tablet-width) {
+				line-height: 30px;
+			}
+		}
+	}
+
+	@media (max-width: vars.$desktop-width) {
+		background-image: url('../img/images/bg-promo-catalog-tablet@1x.jpg');
+
+		h2 {
+			max-width: 100%;
+			font-size: 20px;
+		}
+	}
+
+	@media (max-width: vars.$desktop-width) and (min-resolution: 2dppx) {
+		background-image: url('../img/images/bg-promo-catalog-tablet@2x.jpg');
+	}
+
+	@media (max-width: vars.$tablet-width) {
+		padding: 84px 15px 78px;
+		background-image: url('../img/images/bg-promo-catalog-mobile@1x.jpg');
+
+		h2 {
+			padding: 0 15px;
+			font-size: 22px;
+		}
+	}
+
+	@media (max-width: vars.$tablet-width) and (min-resolution: 2dppx) {
+		background-image: url('../img/images/bg-promo-catalog-mobile@2x.jpg');
+	}
+}

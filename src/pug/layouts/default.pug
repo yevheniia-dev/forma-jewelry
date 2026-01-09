@@ -20,11 +20,10 @@ html(lang="de")
     link(rel="stylesheet" href="css/style.css")
 
   body.page.page--nojs
-    include ../mixin_includes.pug
+    include ../mixin-includes.pug
     include ../blocks/header.pug
 
-    main.page__main.main.main--main
-      block content
+    block main
 
     include ../blocks/footer.pug
 

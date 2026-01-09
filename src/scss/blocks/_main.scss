@@ -1,0 +1,55 @@
+@use 'utils/variables' as vars;
+
+.main__section {
+	max-width: 1366px;
+	margin: 0 auto;
+
+	/* TEMP: for layout debugging */
+	outline: 1px dashed red;
+	outline-offset: -1px;
+}
+
+.main__blog {
+	padding: 116px 96px 0;
+	/* TEMP: for layout debugging */
+	outline: 1px dashed red;
+	outline-offset: -1px;
+
+	@media (max-width: vars.$desktop-width) {
+		padding: 65px 45px 0;
+	}
+
+	@media (max-width: vars.$tablet-width) {
+		padding: 34px 15px 0;
+	}
+}
+
+.main__faq {
+	padding: 118px 96px 0;
+	/* TEMP: for layout debugging */
+	outline: 1px dashed red;
+	outline-offset: -1px;
+
+	@media (max-width: vars.$desktop-width) {
+		padding: 68px 45px 0;
+	}
+
+	@media (max-width: vars.$tablet-width) {
+		padding: 59px 15px 0;
+	}
+}
+
+.main__gallery {
+	padding: 101px 96px 77px;
+	/* TEMP: for layout debugging */
+	outline: 1px dashed red;
+	outline-offset: -1px;
+
+	@media (max-width: vars.$desktop-width) {
+		padding: 68px 45px 50px;
+	}
+
+	@media (max-width: vars.$tablet-width) {
+		padding: 61px 15px 45px;
+	}
+}

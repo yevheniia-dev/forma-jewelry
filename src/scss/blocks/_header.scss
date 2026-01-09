@@ -125,6 +125,8 @@
 	}
 
 	@media (max-width: vars.$desktop-width) {
+		display: none;
+
 		width: 100%;
 
 		order: 4;
@@ -132,7 +134,7 @@
 
 	@media (max-width: vars.$tablet-width) {
 		// width: 100%;
-		display: none;
+		// display: none;
 	}
 }
 
