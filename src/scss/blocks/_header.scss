@@ -46,11 +46,6 @@
 			display: none;
 		}
 	}
-
-	@media (max-width: vars.$tablet-width) {
-		// flex-wrap: wrap;
-		// row-gap: 16px;
-	}
 }
 
 .header__burger-btn {
@@ -131,11 +126,6 @@
 
 		order: 4;
 	}
-
-	@media (max-width: vars.$tablet-width) {
-		// width: 100%;
-		// display: none;
-	}
 }
 
 .header__bottom {
@@ -202,7 +192,6 @@
 
 		.header__bottom {
 			display: block;
-			// margin-top: 32px;
 		}
 
 		.header__nav {

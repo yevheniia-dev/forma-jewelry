@@ -56,7 +56,6 @@
 	}
 }
 
-/* модификаторы */
 .values__item--handmade {
 	background-image: url('../img/images/handmade.png');
 }
@@ -73,7 +72,6 @@
 	background-image: url('../img/images/meaning.png');
 }
 
-/* overlay */
 .values__overlay {
 	height: 100%;
 	padding: 24px;
@@ -95,7 +93,6 @@
 	}
 }
 
-/* заголовок */
 .values__title {
 	writing-mode: vertical-rl;
 	transform: rotate(180deg);
@@ -130,7 +127,6 @@
 	}
 }
 
-/* текст */
 .values__text {
 	display: none;
 	opacity: 0;

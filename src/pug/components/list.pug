@@ -19,24 +19,3 @@ mixin list(props = {})
         else
           span(class=block + '__text') #{item.text}
 
-//-+list({
-    block: 'sub-list',
-    parent: 'header',
-    parentElem: 'sub-nav',
-    items: [
-      { text: 'Über CH', href: '#' },
-      { text: 'Filialen & Öffnungszeiten', href: '#' },
-      { text: 'Kontakt', href: '#' }
-    ]
-  })
-  <ul class="header__sub-nav sub-list">
-    <li class="sub-list__item">
-      <a href="#" class="sub-list__link">Über CH</a>
-    </li>
-    <li class="sub-list__item">
-      <a href="#" class="sub-list__link">Filialen & Öffnungszeiten</a>
-    </li>
-    <li class="sub-list__item">
-      <a href="#" class="sub-list__link">Kontakt</a>
-    </li>
-  </ul>
