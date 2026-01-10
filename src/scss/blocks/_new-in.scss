@@ -1,0 +1,166 @@
+@use 'utils/variables' as vars;
+@use 'base/typography';
+
+.new-in {
+	position: relative;
+	max-width: 1366px;
+	width: 100vw;
+
+	margin: 0 auto 117px;
+	padding: 121px 96px 0;
+
+	@media (max-width: vars.$desktop-width) {
+		padding: 70px 45px 0;
+	}
+
+	@media (max-width: vars.$tablet-width) {
+		padding: 61px 15px 0;
+	}
+}
+
+.new-in__title {
+	text-align: center;
+
+	h2 {
+		@include typography.title;
+		margin: 0 50px 23px;
+	}
+
+	@media (max-width: vars.$desktop-width) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		h2 {
+			margin: 0 0 12px;
+		}
+	}
+}
+
+.new-in__link {
+	padding: 0;
+	z-index: 10;
+}
+
+/* ---------- SLIDER ---------- */
+
+.new-in__slider {
+	width: 100%;
+	min-height: 505px;
+	margin-top: -50px;
+	overflow: hidden;
+
+	@media (max-width: vars.$desktop-width) {
+		margin-top: -44px;
+	}
+
+	@media (max-width: vars.$tablet-width) {
+		margin-top: 42px;
+		min-height: 290px;
+	}
+}
+
+/* ---------- CONTROLS ---------- */
+
+.new-in__slider-controls {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 90px;
+	padding-right: 10px;
+	z-index: 10;
+
+	@media (max-width: vars.$desktop-width) {
+		margin-bottom: 40px;
+		padding-right: 0;
+	}
+
+	@media (max-width: vars.$tablet-width) {
+		display: none;
+	}
+}
+
+.new-in__slider-btn {
+	padding: 0;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+
+	svg {
+		color: vars.$basic-brown;
+	}
+
+	&:hover svg,
+	&:focus svg {
+		color: vars.$bg-black;
+	}
+
+	&:active svg {
+		color: rgba(vars.$bg-black, 0.3);
+	}
+}
+
+/* ---------- PAGINATION ---------- */
+
+.new-in__slider-pagination {
+	width: 100%;
+	margin-top: 28px;
+	text-align: center;
+
+	@media (max-width: vars.$desktop-width) {
+		margin-top: 21px;
+	}
+
+	@media (max-width: vars.$tablet-width) {
+		margin-top: 11px;
+
+		span {
+			padding: 0 5px;
+		}
+	}
+}
+
+.new-in__slider-pagination .swiper-pagination-bullet {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0 6px;
+	font-size: 16px;
+	background-color: transparent;
+	cursor: pointer;
+	color: vars.$placeholder-grey;
+
+	&:hover,
+	&:focus {
+		color: vars.$basic-black;
+	}
+
+	&:active {
+		color: rgba(vars.$basic-black, 0.5);
+	}
+}
+
+.new-in__slider-pagination .swiper-pagination-bullet-active {
+	color: vars.$basic-black;
+}
+
+/* ---------- NO-JS ---------- */
+
+.new-in__slider--nojs {
+	display: flex;
+	flex-direction: column;
+	margin-top: 60px;
+
+	.new-in__slider-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+
+	.new-in__slider-controls {
+		display: none;
+	}
+
+	.new-in__slide {
+		width: auto;
+	}
+}

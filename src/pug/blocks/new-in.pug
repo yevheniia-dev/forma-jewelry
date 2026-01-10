@@ -111,26 +111,25 @@
   ];
 
 
-section.main__new-in.new-in
-  .new-in__title
-    h2 Neuheiten
-    a.new-in__link.section-link(href="#") Jetzt entdecken
+.new-in__title
+  h2 Neuheiten
+  a.new-in__link.section-link(href="#") Jetzt entdecken
 
-  .new-in__slider.swiper-container.new-in__slider--nojs
-    .new-in__slider-controls
-      button.new-in__slider-btn.new-in__slider-btn--prev(type="button")
-        svg(width="30" height="11")
-          use(href="img/images/sprite.svg#icon-arrow-left")
-        span.visually-hidden Vorherige
+.new-in__slider.swiper-container.new-in__slider--nojs
+  .new-in__slider-controls
+    button.new-in__slider-btn.new-in__slider-btn--prev(type="button")
+      svg(width="30" height="11")
+        use(href="img/images/sprite.svg#icon-arrow-left")
+      span.visually-hidden Vorherige
 
-      button.new-in__slider-btn.new-in__slider-btn--next(type="button")
-        svg(width="30" height="11")
-          use(href="img/images/sprite.svg#icon-arrow-right")
-        span.visually-hidden Nächste
+    button.new-in__slider-btn.new-in__slider-btn--next(type="button")
+      svg(width="30" height="11")
+        use(href="img/images/sprite.svg#icon-arrow-right")
+      span.visually-hidden Nächste
 
-    .new-in__slider-wrapper.swiper-wrapper
-      each product in products.concat(products, products)
-        .new-in__slide.swiper-slide
-          +productCard(product)
+  .new-in__slider-wrapper.swiper-wrapper
+    each product in products.concat(products, products)
+      .new-in__slide.swiper-slide
+        +productCard(product)
 
-    .new-in__slider-pagination.swiper-pagination
+  .new-in__slider-pagination.swiper-pagination

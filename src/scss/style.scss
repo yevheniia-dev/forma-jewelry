@@ -1,5 +1,6 @@
 // utils
 @use 'utils/variables';
+@use 'utils/swiper';
 
 // base
 @use 'base/fonts';
@@ -14,11 +15,13 @@
 @use 'components/nav-list';
 @use 'components/sub-list';
 @use 'components/user-menu';
+@use 'components/product-card';
 
 /* blocks */
 @use 'blocks/header';
 @use 'blocks/main';
 @use 'blocks/promo';
+@use 'blocks/new-in';
 @use 'blocks/footer';
 @use 'blocks/footer-nav';
 @use 'blocks/footer-social';
