@@ -1,0 +1,34 @@
+//- includes/mixins/product-card.pug
+mixin productCard(props)
+  -
+    var baseClass = 'product-card'
+    var modClass = props.mod ? ' product-card--' + props.mod : ''
+    var classes = baseClass + modClass
+
+  .product-card(class=classes)
+    .product-card__image
+      +picture({
+        parent: 'product-card',
+        mod: props.pictureMod,
+        webp: props.webp,
+        webp2x: props.webp2x,
+        jpg: props.jpg,
+        jpg2x: props.jpg2x,
+        alt: props.alt,
+        width: props.width || 270,
+        height: props.height || 272
+      })
+
+    .product-card__description
+      p.product-card__title
+        | #{props.title}
+      p.product-card__price
+        | #{props.price}
+
+    if props.button
+      +button({
+        text: props.button.text,
+        mod: props.button.mod,
+        parent: 'product-card',
+        attrs: props.button.attrs
+      })

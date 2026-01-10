@@ -1,4 +1,5 @@
 @use 'utils/variables' as vars;
+@use 'utils/mixins' as mixins;
 
 .promo {
 	position: relative;
@@ -7,7 +8,9 @@
 	text-align: center;
 	color: vars.$basic-white;
 	background-color: vars.$basic-brown;
-	background-image: url('../img/images/bg-promo-desktop@1x.jpg');
+
+	@include mixins.bg-image-set('../img/images', 'bg-promo-desktop');
+
 	background-position: center;
 	background-size: cover;
 
@@ -18,26 +21,14 @@
 		background-color: vars.$filter-brown;
 	}
 
-	@media (min-resolution: 2dppx) {
-		background-image: url('../img/images/bg-promo-desktop@2x.jpg');
-	}
-
 	@media (max-width: vars.$desktop-width) {
 		padding-right: 37px;
-		background-image: url('../img/images/bg-promo-tablet@1x.jpg');
-	}
-
-	@media (max-width: vars.$desktop-width) and (min-resolution: 2dppx) {
-		background-image: url('../img/images/bg-promo-tablet@2x.jpg');
+		@include mixins.bg-image-set('../img/images', 'bg-promo-tablet');
 	}
 
 	@media (max-width: vars.$tablet-width) {
 		padding: 190px 15px;
-		background-image: url('../img/images/bg-promo-mobile@1x.jpg');
-	}
-
-	@media (max-width: vars.$tablet-width) and (min-resolution: 2dppx) {
-		background-image: url('../img/images/bg-promo-mobile@2x.jpg');
+		@include mixins.bg-image-set('../img/images', 'bg-promo-mobile');
 	}
 
 	h2 {
@@ -71,14 +62,24 @@
 	}
 }
 
-/* ===== PROMO CATALOG ===== */
-
 .promo--catalog {
 	padding: 92px 15px;
-	background-image: url('../img/images/bg-promo-catalog@1x.jpg');
 
-	@media (min-resolution: 2dppx) {
-		background-image: url('../img/images/bg-promo-catalog@2x.jpg');
+	@include mixins.bg-image-set('../img/images', 'bg-promo-catalog-desktop');
+
+	@media (max-width: vars.$desktop-width) {
+		@include mixins.bg-image-set(
+			'../img/images',
+			'bg-promo-catalog-tablet'
+		);
+	}
+
+	@media (max-width: vars.$tablet-width) {
+		padding: 84px 15px 78px;
+		@include mixins.bg-image-set(
+			'../img/images',
+			'bg-promo-catalog-mobile'
+		);
 	}
 
 	h2 {
@@ -86,6 +87,11 @@
 		font-weight: 500;
 		font-size: 22px;
 		line-height: 33px;
+
+		@media (max-width: vars.$desktop-width) {
+			max-width: 100%;
+			font-size: 20px;
+		}
 
 		span {
 			font-size: 34px;
@@ -96,32 +102,10 @@
 				line-height: 30px;
 			}
 		}
-	}
 
-	@media (max-width: vars.$desktop-width) {
-		background-image: url('../img/images/bg-promo-catalog-tablet@1x.jpg');
-
-		h2 {
-			max-width: 100%;
-			font-size: 20px;
-		}
-	}
-
-	@media (max-width: vars.$desktop-width) and (min-resolution: 2dppx) {
-		background-image: url('../img/images/bg-promo-catalog-tablet@2x.jpg');
-	}
-
-	@media (max-width: vars.$tablet-width) {
-		padding: 84px 15px 78px;
-		background-image: url('../img/images/bg-promo-catalog-mobile@1x.jpg');
-
-		h2 {
+		@media (max-width: vars.$tablet-width) {
 			padding: 0 15px;
 			font-size: 22px;
 		}
-	}
-
-	@media (max-width: vars.$tablet-width) and (min-resolution: 2dppx) {
-		background-image: url('../img/images/bg-promo-catalog-mobile@2x.jpg');
 	}
 }

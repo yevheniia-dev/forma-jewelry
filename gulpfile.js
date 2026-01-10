@@ -13,6 +13,8 @@ const clean = require('gulp-clean');
 
 const browserSync = require('browser-sync').create();
 
+const webp = require('gulp-webp');
+
 /* paths */
 const paths = {
 	pug: {
@@ -73,12 +75,23 @@ function copyJs() {
 		.pipe(browserSync.stream());
 }
 
-/* images — ТОЛЬКО бинарь */
+/* images — copy originals */
 function copyImg() {
 	return src(paths.img.src, { encoding: false }).pipe(dest(paths.img.dest));
 }
 
-/* fonts — ТОЛЬКО бинарь */
+/* images -> webp (jpg/png only) */
+function convertToWebp() {
+	return src('src/img/**/*.{jpg,jpeg,png}', { encoding: false })
+		.pipe(
+			webp({
+				quality: 90,
+			})
+		)
+		.pipe(dest(paths.img.dest));
+}
+
+/* fonts */
 function copyFonts() {
 	return src(paths.fonts.src, { encoding: false }).pipe(
 		dest(paths.fonts.dest)
@@ -98,7 +111,8 @@ function serve() {
 	watch(paths.pug.watch, compilePug);
 	watch(paths.scss.watch, compileScss);
 	watch(paths.js.watch, copyJs);
-	watch(paths.img.watch, series(copyImg, reload));
+
+	watch(paths.img.watch, series(copyImg, convertToWebp, reload));
 	watch(paths.fonts.watch, series(copyFonts, reload));
 }
 
@@ -110,12 +124,19 @@ function reload(done) {
 /* build */
 exports.build = series(
 	cleanDist,
-	parallel(compilePug, compileScss, copyJs, copyImg, copyFonts)
+	parallel(compilePug, compileScss, copyJs, copyImg, convertToWebp, copyFonts)
 );
 
 /* dev */
 exports.default = series(
 	cleanDist,
-	parallel(compilePug, compileScss, copyJs, copyImg, copyFonts),
+	parallel(
+		compilePug,
+		compileScss,
+		copyJs,
+		copyImg,
+		convertToWebp,
+		copyFonts
+	),
 	serve
 );

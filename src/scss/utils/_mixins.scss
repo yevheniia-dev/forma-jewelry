@@ -14,3 +14,12 @@
 	clip-path: inset(100%);
 	white-space: nowrap;
 }
+
+@mixin bg-image-set($path, $name) {
+	background-image: image-set(
+		url('#{$path}/#{$name}@1x.webp') type('image/webp') 1x,
+		url('#{$path}/#{$name}@2x.webp') type('image/webp') 2x,
+		url('#{$path}/#{$name}@1x.jpg') type('image/jpeg') 1x,
+		url('#{$path}/#{$name}@2x.jpg') type('image/jpeg') 2x
+	);
+}
