@@ -1,0 +1,12 @@
+mixin valueItem(props)
+  -
+    var baseClass = 'values__item'
+    var modClass = props.key ? ' values__item--' + props.key : ''
+    var activeClass = props.isActive ? ' is-active' : ''
+    var classes = baseClass + modClass + activeClass
+
+  div(class=classes)
+    .values__overlay
+      span.values__title #{props.title}
+      .values__text
+        p !{props.text}

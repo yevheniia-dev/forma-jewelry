@@ -136,3 +136,18 @@
 		speed: 800,
 	});
 })();
+
+(() => {
+	const items = document.querySelectorAll('.values__item');
+
+	if (!items.length) {
+		return;
+	}
+
+	items.forEach((item) => {
+		item.addEventListener('mouseenter', () => {
+			items.forEach((el) => el.classList.remove('is-active'));
+			item.classList.add('is-active');
+		});
+	});
+})();
