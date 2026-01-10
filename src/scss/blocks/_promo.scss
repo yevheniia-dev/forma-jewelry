@@ -65,7 +65,7 @@
 .promo--catalog {
 	padding: 92px 15px;
 
-	@include mixins.bg-image-set('../img/images', 'bg-promo-catalog-desktop');
+	@include mixins.bg-image-set('../img/images', 'bg-promo-catalog');
 
 	@media (max-width: vars.$desktop-width) {
 		@include mixins.bg-image-set(

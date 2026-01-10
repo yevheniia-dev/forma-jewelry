@@ -1,0 +1,32 @@
+-
+  const faqItems = [
+    {
+      question: 'Aus welchen Materialien besteht der Schmuck?',
+      answer: 'Unser Schmuck besteht aus massivem Gold, Silber oder Leder. Einige Stücke enthalten Edel- und Halbedelsteine sowie Kristalle.'
+    },
+    {
+      question: 'In welche Länder liefern Sie?',
+      answer: 'Wir liefern in die meisten europäischen Länder. Die Versandoptionen werden beim Checkout berechnet.'
+    },
+    {
+      question: 'Welche Zahlungsmethoden werden akzeptiert?',
+      answer: 'Wir akzeptieren Kreditkarten, PayPal und weitere gängige Online-Zahlungsmethoden.'
+    },
+    {
+      question: 'Kann ich den Schmuck zurückgeben, wenn er nicht passt?',
+      answer: 'Ja, Sie können den Schmuck innerhalb der Rückgabefrist zurückgeben, falls er nicht passt.'
+    }
+  ]
+
+
+h2 Häufig gestellte Fragen
+
+ul.faq__list.accordion
+  each item in faqItems
+    +accordionItem({
+      question: item.question,
+      answer: item.answer,
+      parent: 'faq',
+      baseClass: 'accordion'
+    })
+

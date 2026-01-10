@@ -1,0 +1,20 @@
+mixin accordionItem(props)
+  -
+    var question = props.question || ''
+    var answer = props.answer || ''
+
+    var baseClass = props.baseClass || 'accordion'
+    var parent = props.parent || 'faq'
+
+  li(class=`${parent}__item ${baseClass}__tab`)
+    button(
+      type="button"
+      class=`${parent}__question ${baseClass}__button`
+    )
+      h3 #{question}
+      svg(width="17" height="10")
+        use(class=`${baseClass}__icon ${baseClass}__icon--open`, href="img/images/sprite.svg#icon-arrow-down")
+        use(class=`${baseClass}__icon ${baseClass}__icon--close`, href="img/images/sprite.svg#icon-arrow-up")
+
+    div(class=`${parent}__answer ${baseClass}__content`)
+      p #{answer}

@@ -1,0 +1,191 @@
+// @use 'utils/variables' as vars;
+// @use 'base/typography';
+
+// .faq {
+// 	width: 85%;
+// 	margin: 0 auto;
+// 	text-align: center;
+// 	background-color: vars.$basic-white;
+
+// 	h2 {
+// 		@include typography.title;
+// 		margin-bottom: 50px;
+// 		letter-spacing: 0.03em;
+// 	}
+
+// 	@media (max-width: vars.$desktop-width) {
+// 		width: 100%;
+// 	}
+
+// 	@media (max-width: vars.$tablet-width) {
+// 		h2 {
+// 			margin-bottom: 29px;
+// 		}
+// 	}
+// }
+
+// .faq__list {
+// 	border: 1px solid vars.$basic-brown;
+// }
+
+// .faq__item {
+// 	position: relative;
+// 	padding: 42px;
+// 	text-align: left;
+
+// 	&:not(:first-child) {
+// 		border-top: 1px solid vars.$basic-brown;
+// 	}
+
+// 	@media (max-width: vars.$desktop-width) {
+// 		padding: 42px 50px;
+// 	}
+
+// 	@media (max-width: vars.$tablet-width) {
+// 		padding: 18px 25px;
+// 	}
+// }
+
+// .faq__item h3 {
+// 	margin: 0;
+// 	margin-right: 50px;
+// 	font-weight: 500;
+// 	font-size: 18px;
+// 	line-height: 23px;
+
+// 	@media (max-width: vars.$tablet-width) {
+// 		margin-right: 55px;
+// 		font-size: 16px;
+// 		line-height: 22px;
+// 	}
+// }
+
+// /* костыль под тексты — оставляем, но теперь читаемо */
+// .faq__item:nth-of-type(4n + 2) h3 {
+// 	@media (max-width: vars.$tablet-width) {
+// 		margin-right: 90px;
+// 	}
+// }
+
+// .faq__item:nth-of-type(4n + 3) h3 {
+// 	@media (max-width: vars.$tablet-width) {
+// 		margin-right: 75px;
+// 	}
+// }
+
+// .faq__item:nth-of-type(4n) h3 {
+// 	@media (max-width: vars.$tablet-width) {
+// 		margin-right: 25px;
+// 	}
+// }
+
+// .faq__item p {
+// 	max-width: 527px;
+// 	margin: 0 45px 0 8px;
+// 	padding-top: 8px;
+// 	font-weight: 400;
+// 	font-size: 16px;
+// 	line-height: 21px;
+
+// 	@media (max-width: vars.$desktop-width) {
+// 		max-width: unset;
+// 		margin-left: 0;
+// 		padding-top: 27px;
+// 	}
+
+// 	@media (max-width: vars.$tablet-width) {
+// 		margin-right: 33px;
+// 		padding-top: 12px;
+// 		font-size: 14px;
+// 		line-height: 20px;
+// 	}
+// }
+
+// .faq__button {
+// 	display: none;
+// 	padding: 50px 47px 50px 0;
+// 	bottom: 0;
+// }
+@use 'utils/variables' as vars;
+@use 'base/typography';
+
+.faq {
+	width: 85%;
+	margin: 0 auto;
+	text-align: center;
+	background-color: vars.$basic-white;
+
+	h2 {
+		@include typography.title;
+		margin-bottom: 50px;
+		letter-spacing: 0.03em;
+	}
+
+	@media (max-width: vars.$desktop-width) {
+		width: 100%;
+	}
+
+	@media (max-width: vars.$tablet-width) {
+		h2 {
+			margin-bottom: 29px;
+		}
+	}
+}
+
+.faq__list {
+	border: 1px solid vars.$basic-brown;
+}
+
+.faq__item {
+	position: relative;
+	margin: 20px;
+	padding: 42px;
+	text-align: left;
+
+	&:not(:first-child) {
+		border-top: 1px solid vars.$basic-brown;
+	}
+
+	@media (max-width: vars.$desktop-width) {
+		padding: 42px 50px;
+	}
+
+	@media (max-width: vars.$tablet-width) {
+		padding: 18px 25px;
+	}
+}
+
+.faq__item h3 {
+	margin: 0;
+	margin-right: 50px;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 23px;
+
+	@media (max-width: vars.$tablet-width) {
+		margin-right: 55px;
+		font-size: 16px;
+		line-height: 22px;
+	}
+}
+
+.faq__item p {
+	max-width: 527px;
+	margin: 25px 45px 0 0;
+	padding: 8px 0 0;
+	font-size: 16px;
+	line-height: 21px;
+
+	@media (max-width: vars.$desktop-width) {
+		max-width: unset;
+		margin-left: 0;
+		padding-top: 27px;
+	}
+
+	@media (max-width: vars.$tablet-width) {
+		margin-right: 33px;
+		padding-top: 12px;
+		font-size: 14px;
+		line-height: 20px;
+	}
+}

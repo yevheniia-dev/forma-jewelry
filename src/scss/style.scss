@@ -16,6 +16,7 @@
 @use 'components/sub-list';
 @use 'components/user-menu';
 @use 'components/product-card';
+@use 'components/accordion';
 
 /* blocks */
 @use 'blocks/header';
@@ -23,6 +24,7 @@
 @use 'blocks/promo';
 @use 'blocks/new-in';
 @use 'blocks/values';
+@use 'blocks/faq';
 @use 'blocks/footer';
 @use 'blocks/footer-nav';
 @use 'blocks/footer-social';

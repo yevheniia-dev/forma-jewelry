@@ -151,3 +151,34 @@
 		});
 	});
 })();
+
+(() => {
+	const accordion = document.querySelector('.accordion');
+	if (accordion) {
+		const isAccordionFaq = accordion.classList.contains('faq__list');
+
+		let openedTab;
+
+		const closeTab = () => {
+			openedTab.classList.remove('accordion__tab--open');
+			openedTab = null;
+		};
+
+		accordion.classList.add('accordion--js');
+		accordion.addEventListener('click', (e) => {
+			const button = e.target.closest('.accordion__button');
+			if (!button) {
+				return;
+			}
+
+			const tab = button.parentElement;
+
+			if (isAccordionFaq && openedTab && tab !== openedTab) {
+				openedTab.classList.remove('accordion__tab--open');
+			}
+
+			tab.classList.toggle('accordion__tab--open');
+			openedTab = tab;
+		});
+	}
+})();
