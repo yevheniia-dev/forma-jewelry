@@ -14,6 +14,17 @@ const clean = require('gulp-clean');
 const browserSync = require('browser-sync').create();
 
 const webp = require('gulp-webp');
+const path = require('path');
+
+/* =========================
+   PUG DATA HELPER (IMPORTANT)
+========================= */
+
+const SRC_ROOT = path.resolve(__dirname, 'src');
+
+function pugRequire(filePath) {
+	return require(path.resolve(SRC_ROOT, filePath));
+}
 
 /* paths */
 const paths = {
@@ -52,7 +63,14 @@ function cleanDist() {
 /* pug -> html */
 function compilePug() {
 	return src(paths.pug.src)
-		.pipe(pug({ pretty: true }))
+		.pipe(
+			pug({
+				pretty: true,
+				locals: {
+					require: pugRequire,
+				},
+			})
+		)
 		.pipe(dest(paths.pug.dest))
 		.pipe(browserSync.stream());
 }
@@ -80,7 +98,7 @@ function copyImg() {
 	return src(paths.img.src, { encoding: false }).pipe(dest(paths.img.dest));
 }
 
-/* images -> webp (jpg/png only) */
+/* images -> webp */
 function convertToWebp() {
 	return src('src/img/**/*.{jpg,jpeg,png}', { encoding: false })
 		.pipe(
