@@ -1,0 +1,69 @@
+mixin filterForm(props = {})
+  -
+    var parent = props.parent ? `${props.parent}__form` : 'filter__form'
+    var attrs = props.attrs || {}
+
+  form(class=parent action="#" method="get")&attributes(attrs)
+    .filter__inner.accordion
+
+      button.filter__close(type="button" id="filter-close")
+        span.visually-hidden Filter schließen
+        svg(width="14" height="14")
+          use(href="img/images/sprite.svg#icon-cross")
+
+      +filterAccordion({
+        title: 'Produkt',
+        mod: 'product',
+        list: {
+          items: [
+            { id: 'necklaces', label: 'Halsketten', checked: true },
+            { id: 'chokers', label: 'Choker', checked: true },
+            { id: 'rings', label: 'Ringe' },
+            { id: 'earrings', label: 'Ohrringe', checked: true }
+          ]
+        }
+      })
+
+      +filterAccordion({
+        title: 'Material',
+        mod: 'material',
+        list: {
+          items: [
+            { id: 'gold', label: 'Gold', checked: true },
+            { id: 'silver', label: 'Silber' }
+          ]
+        }
+      })
+
+      +filterAccordion({
+        title: 'Kollektion',
+        mod: 'collection',
+        list: {
+          items: [
+            { id: 'flamingo', label: 'Pink Flamingo' },
+            { id: 'dreams', label: 'Dreams', checked: true }
+          ]
+        }
+      })
+
+      +filterAccordion({
+        title: 'Preis',
+        mod: 'price',
+        range: true
+      })
+
+    .filter__buttons
+      +button({
+        text: 'Anwenden',
+        type: 'submit',
+        parent: 'filter',
+        attrs: { id: 'filter-submit' }
+      })
+
+      +button({
+        text: 'Alles zurücksetzen',
+        type: 'reset',
+        parent: 'filter',
+        mod: 'white',
+        attrs: { id: 'filter-reset' }
+      })

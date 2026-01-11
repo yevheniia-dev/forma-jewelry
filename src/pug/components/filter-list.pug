@@ -1,0 +1,15 @@
+mixin filterList(props)
+  -
+    var block = 'filter'
+    var element = 'list'
+    var baseClass = `${block}__${element}`
+
+    var parent = props.parent ? ` ${props.parent}__inner` : ''
+    var className = `${baseClass} accordion__inner${parent}`
+
+    var items = props.items || []
+
+  ul(class=className)
+    each item in items
+      li.filter__item
+        +filterCheckbox(item)

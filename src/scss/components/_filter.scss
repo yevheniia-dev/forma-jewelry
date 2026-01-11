@@ -1,0 +1,211 @@
+@use 'utils/variables' as vars;
+
+.filter {
+	width: 100%;
+}
+
+.filter__inner {
+	margin-bottom: 35px;
+	border: solid vars.$basic-brown;
+	border-width: 1px 0 0;
+
+	@media (max-width: vars.$desktop-width) {
+		position: relative;
+		border: 0;
+	}
+}
+
+.filter__block {
+	position: relative;
+	min-height: 110px;
+	padding: 21px 19px 13px 24px;
+	border: solid vars.$basic-brown;
+	border-width: 0 1px 1px;
+
+	h3 {
+		///это убрал
+		margin: 0;
+		padding-bottom: 15px;
+		font-size: 16px;
+	}
+
+	@media (max-width: vars.$desktop-width) {
+		padding: 34px 21px 13px 20px;
+		border-width: 0 0 1px 0;
+
+		h3 {
+			font-size: 18px;
+			line-height: 23px;
+		}
+	}
+}
+
+.filter__content {
+	padding: 9px 0 2px 8px;
+
+	@media (max-width: vars.$desktop-width) {
+		margin-top: 60px;
+		padding: 12px 10px 7px;
+	}
+}
+
+.filter__head-button {
+	position: relative;
+	display: none;
+	padding: 25px 19px 29px;
+}
+
+.filter__button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 22px;
+	margin-bottom: 25px;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 21px;
+	color: vars.$basic-white;
+	background-color: vars.$basic-brown;
+	border: 1px solid vars.$basic-brown;
+	cursor: pointer;
+
+	&:hover,
+	&:focus {
+		opacity: 0.5;
+	}
+
+	&:active {
+		background-color: vars.$basic-black;
+	}
+
+	@media (max-width: vars.$desktop-width) {
+		width: calc(100% - 80px);
+		margin: 40px;
+	}
+
+	@media (max-width: vars.$tablet-width) {
+		width: calc(100% - 40px);
+		margin: 31px;
+	}
+}
+
+.filter__button--white {
+	margin-top: 25px;
+	color: vars.$basic-black;
+	background-color: vars.$basic-white;
+
+	&:active {
+		color: vars.$basic-white;
+		background-color: vars.$basic-brown;
+	}
+
+	@media (max-width: vars.$desktop-width) {
+		margin-bottom: 40px;
+	}
+
+	@media (max-width: vars.$tablet-width) {
+		margin-top: 21px;
+		margin-bottom: 30px;
+	}
+}
+
+.filter__close {
+	display: none;
+	color: #ffffff;
+
+	@media (max-width: vars.$desktop-width) {
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: block;
+		width: 32px;
+		height: 32px;
+		background-color: vars.$basic-black;
+		border: none;
+		border-radius: 50%;
+		transform: translate(50%, -50%);
+		z-index: 100;
+
+		svg {
+			fill: currentColor;
+		}
+
+		&:hover,
+		&:focus {
+			opacity: 0.5;
+		}
+
+		&:active {
+			background-color: vars.$basic-white;
+		}
+	}
+
+	@media (max-width: vars.$tablet-width) {
+		right: 6px;
+		top: 11px;
+	}
+}
+
+.filter__item {
+	margin-bottom: 10px;
+
+	@media (max-width: vars.$desktop-width) {
+		margin-bottom: 17px;
+	}
+}
+
+.filter__checkbox-label {
+	position: relative;
+	padding-left: 25px;
+	font-family: vars.$poppins;
+	font-size: 14px;
+	line-height: 18px;
+	cursor: pointer;
+
+	&:hover {
+		color: vars.$basic-brown;
+	}
+
+	@media (max-width: vars.$desktop-width) {
+		padding-left: 31px;
+		font-size: 16px;
+		line-height: 21px;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 14px;
+		height: 14px;
+		border: 1px solid vars.$basic-brown;
+
+		@media (max-width: vars.$desktop-width) {
+			width: 18px;
+			height: 18px;
+		}
+	}
+}
+
+.filter__input:checked + .filter__checkbox-label::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 14px;
+	height: 14px;
+	background-color: vars.$basic-brown;
+	border: 1px solid vars.$basic-brown;
+
+	@media (max-width: vars.$desktop-width) {
+		width: 18px;
+		height: 18px;
+	}
+}
+
+.filter__input:hover + .filter__checkbox-label::before,
+.filter__input:focus + .filter__checkbox-label::before {
+	transform: scale(1.2);
+}

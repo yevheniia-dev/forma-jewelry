@@ -1,0 +1,14 @@
+mixin filterCheckbox(props)
+  -
+    var id = props.id || ''
+    var label = props.label || ''
+    var checked = props.checked ? true : false
+
+  input.filter__input.visually-hidden(
+    type="checkbox"
+    id=id
+    name=id
+    value=id
+    checked=checked
+  )
+  label.filter__checkbox-label(for=id)= label

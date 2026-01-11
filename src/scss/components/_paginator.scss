@@ -1,0 +1,68 @@
+@use 'utils/variables' as vars;
+
+.paginator {
+	display: flex;
+	justify-content: flex-start;
+	padding-top: 66px;
+
+	@media (max-width: vars.$desktop-width) {
+		padding-top: 60px;
+	}
+
+	@media (max-width: vars.$tablet-width) {
+		padding-top: 26px;
+	}
+}
+
+.paginator__list {
+	display: flex;
+	justify-content: space-between;
+	width: 20%;
+	max-width: 240px;
+	margin: 0 auto;
+	padding: 0 55px 0 21px;
+
+	@media (max-width: vars.$desktop-width) {
+		justify-content: center;
+		gap: 20px;
+	}
+
+	@media (max-width: vars.$tablet-width) {
+		gap: 15px;
+		width: 100%;
+		max-width: none;
+		padding: 0;
+	}
+}
+
+.paginator__prev {
+	@media (max-width: vars.$tablet-width) {
+		display: none;
+	}
+}
+
+.paginator__item {
+	color: vars.$placeholder-grey;
+
+	a.current {
+		color: vars.$basic-black;
+	}
+
+	@media (max-width: vars.$tablet-width) {
+		margin-right: 24px;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+}
+
+.paginator__next {
+	@media (max-width: vars.$desktop-width) {
+		margin-left: 19px;
+	}
+
+	@media (max-width: vars.$tablet-width) {
+		display: none;
+	}
+}

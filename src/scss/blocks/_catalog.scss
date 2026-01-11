@@ -1,0 +1,119 @@
+@use 'utils/variables' as vars;
+
+.catalog__container {
+	display: grid;
+	grid-template-areas: 'filter items';
+	grid-template-columns: 21.5% 1fr;
+	gap: 50px;
+	max-width: 1366px;
+	margin: 0 auto;
+	padding: 80px 98px 73px;
+
+	@media (max-width: vars.$desktop-width) {
+		grid-template-areas:
+			'filter'
+			'items';
+		grid-template-columns: 1fr;
+		grid-template-rows: min-content 1fr;
+		gap: 52px;
+		padding: 50px 45px 78px;
+	}
+
+	@media (max-width: vars.$tablet-width) {
+		gap: 37px;
+		padding: 40px 15px 65px;
+	}
+}
+
+.catalog__products {
+	grid-area: items;
+	display: flex;
+	flex-direction: column;
+
+	.product-card__description {
+		padding: 21px 0 10px;
+
+		@media (max-width: vars.$tablet-width) {
+			padding: 18px 0;
+		}
+	}
+}
+
+.catalog__filter {
+	grid-area: filter;
+}
+
+.catalog__filter-button {
+	display: none;
+	width: 100%;
+	border: 1px solid vars.$basic-brown;
+	padding: 26px;
+	font-size: 16px;
+	text-align: center;
+	background-color: vars.$basic-brown;
+	color: vars.$basic-white;
+
+	@media (max-width: vars.$desktop-width) {
+		display: block;
+	}
+
+	@media (max-width: vars.$tablet-width) {
+		padding: 21px 20px 23px;
+	}
+}
+
+.catalog__filter--nojs {
+	@media (max-width: vars.$desktop-width) {
+		width: 80%;
+		margin: 0 auto;
+	}
+
+	.catalog__filter-button {
+		display: none;
+	}
+
+	.filter__close {
+		display: none;
+	}
+}
+
+.catalog__filter-wrapper {
+	@media (max-width: vars.$desktop-width) {
+		display: none;
+	}
+}
+
+.catalog__filter--js {
+	.accordion__button {
+		position: absolute;
+	}
+	.catalog__filter-wrapper {
+		position: fixed;
+		inset: 0;
+		z-index: vars.$z-filter-overlay;
+		display: none;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		max-height: 100vh;
+		overflow: auto;
+		background-color: vars.$basic-white;
+
+		@media (max-width: vars.$desktop-width) {
+			display: block;
+		}
+	}
+
+	.catalog__form {
+		@media (max-width: vars.$desktop-width) {
+			max-width: 423px;
+			margin: 40px auto 0;
+			box-shadow: 0 5px 32px rgba(219, 213, 208, 0.24);
+		}
+
+		@media (max-width: vars.$tablet-width) {
+			width: calc(100% - 46px);
+			margin: 65px auto 60px;
+		}
+	}
+}

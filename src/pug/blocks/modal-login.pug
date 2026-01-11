@@ -1,0 +1,45 @@
+.modal-login(tabindex="0" id="login")
+  h2 Anmelden
+
+  form.modal-login__form(
+    action="#"
+    method="POST"
+    id="login-form"
+  )
+    .modal-login__container
+      .modal-login__field
+        input#login-email(
+          type="email"
+          name="login-email"
+          placeholder="Ihre E-Mail-Adresse"
+          required
+        )
+        label.visually-hidden(for="login-email")
+          | E-Mail-Adresse eingeben
+
+      .modal-login__field
+        input#login-password(
+          type="password"
+          name="login-password"
+          placeholder="Passwort"
+          required
+        )
+        label.visually-hidden(for="login-password")
+          | Passwort eingeben
+
+        a(href="#") Passwort vergessen?
+
+      +button({
+        text: 'Anmelden',
+        type: 'submit',
+        parent: 'modal-login'
+      })
+
+      p
+        span Noch kein Konto?
+        a(href="#") Registrieren
+
+  button.modal-login__close(type="button")
+    span.visually-hidden Anmeldefenster schließen
+    svg(width="14" height="14")
+      use(href="img/sprite.svg#icon-cross")

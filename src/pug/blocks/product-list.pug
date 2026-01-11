@@ -1,0 +1,12 @@
+ul.products
+  each item in products
+    li.products__item
+      +productCard({
+        title: item.title,
+        price: item.price,
+        alt: item.alt,
+        webp: item.webp,
+        webp2x: item.webp2x,
+        jpg: item.jpg,
+        jpg2x: item.jpg2x
+      })

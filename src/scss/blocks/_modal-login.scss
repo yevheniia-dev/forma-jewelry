@@ -1,0 +1,215 @@
+@use 'utils/variables' as vars;
+@use 'utils/mixins' as mixins;
+
+.modal-login {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	flex-direction: column;
+	width: 100%;
+	max-width: 430px;
+	margin: 0 auto;
+	padding: 188px 45px 60px;
+	text-align: center;
+	background-color: vars.$bg-beige;
+	box-shadow: 0 5px 32px rgba(226, 221, 215, 0.24);
+	z-index: 100;
+	max-height: 100vh;
+	overflow: auto;
+	scrollbar-width: none;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 138px;
+
+		@include mixins.bg-image-set('../img/images', 'bg-login');
+
+		background-position: center;
+		background-size: cover;
+	}
+
+	@media (max-width: vars.$desktop-width) {
+		max-width: 442px;
+		padding: 197px 50px 40px;
+	}
+
+	@media (max-width: vars.$tablet-width) {
+		width: calc(100% - 50px);
+		padding: 120px 15px 25px;
+
+		&::before {
+			height: 84px;
+		}
+	}
+
+	h2 {
+		margin: 0 0 20px;
+		font-family: vars.$cormorant;
+		font-weight: 700;
+		font-size: 34px;
+		line-height: 44px;
+
+		@media (max-width: vars.$desktop-width) {
+			margin-bottom: 28px;
+			line-height: 31px;
+		}
+
+		@media (max-width: vars.$tablet-width) {
+			font-size: 24px;
+			margin-bottom: 16px;
+		}
+	}
+}
+
+.modal-login--active {
+	display: flex;
+
+	@media (max-width: vars.$desktop-width) {
+		width: 84%;
+		top: 57%;
+	}
+}
+
+.modal-login__container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+	p {
+		font-size: 14px;
+	}
+}
+
+.modal-login__field {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin-bottom: 24px;
+
+	&:last-of-type {
+		margin-bottom: 45px;
+	}
+
+	@media (max-width: vars.$tablet-width) {
+		margin-bottom: 17px;
+
+		&:last-of-type {
+			margin-bottom: 36px;
+		}
+	}
+
+	input {
+		width: 100%;
+		padding: 10px 0;
+		font: inherit;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 21px;
+		color: vars.$basic-black;
+		background-color: vars.$bg-beige;
+		border: none;
+		border-bottom: 1px solid vars.$basic-black;
+		border-radius: 0;
+
+		&::placeholder {
+			color: vars.$placeholder-grey;
+		}
+
+		&:focus-visible {
+			outline: 2px solid vars.$basic-black;
+			outline-offset: 2px;
+		}
+	}
+
+	a {
+		align-self: flex-end;
+		margin-top: 4px;
+		font-size: 12px;
+		line-height: 18px;
+		color: vars.$placeholder-grey;
+
+		&:hover,
+		&:focus-visible {
+			color: vars.$basic-black;
+		}
+
+		&:active {
+			opacity: 0.7;
+		}
+	}
+}
+
+.modal-login__button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 23px;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 21px;
+	color: vars.$basic-white;
+	background-color: vars.$basic-brown;
+	border: 1px solid vars.$basic-brown;
+	cursor: pointer;
+
+	&:hover,
+	&:focus-visible {
+		opacity: 0.5;
+	}
+
+	&:active {
+		background-color: vars.$basic-black;
+	}
+}
+
+.modal-login__close {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 24px;
+	height: 24px;
+	margin: 0;
+	padding: 0;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+
+	svg {
+		fill: vars.$basic-black;
+	}
+
+	&:hover,
+	&:focus-visible {
+		opacity: 0.5;
+	}
+
+	&:active {
+		opacity: 0.7;
+	}
+
+	@media (max-width: vars.$desktop-width) {
+		top: 20px;
+		right: 19px;
+		transform: scale(1.5);
+	}
+
+	@media (max-width: vars.$tablet-width) {
+		top: 10px;
+		right: 10px;
+		transform: none;
+	}
+}

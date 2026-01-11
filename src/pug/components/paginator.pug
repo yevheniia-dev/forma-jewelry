@@ -1,0 +1,17 @@
+mixin paginator(props)
+  .paginator
+    a.paginator__prev(href=props.prev || '#')
+      | Previous
+      span.visually-hidden Previous
+
+    ul.paginator__list
+      each page in props.pages
+        li.paginator__item
+          if page === props.current
+            a.current(href='#') #{page}
+          else
+            a(href='#') #{page}
+
+    a.paginator__next(href=props.next || '#')
+      | Next
+      span.visually-hidden Next pages

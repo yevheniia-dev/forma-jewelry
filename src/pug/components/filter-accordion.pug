@@ -1,0 +1,25 @@
+mixin filterAccordion(props)
+	-
+		var block = 'filter'
+		var element = 'block'
+		var baseClass = `${block}__${element}`
+
+		var mod = props.mod ? ` ${baseClass}--${props.mod}` : ''
+		var parent = props.parent ? ` ${props.parent}__${element}` : ''
+		var className = baseClass + mod + parent
+
+		var title = props.title || ''
+
+	.accordion__tab(class=className)
+		button.filter__head-button.accordion__button(type="button")
+			span.visually-hidden Filterbereich öffnen / schließen
+			h3.filter__title #{title}
+			svg.filter__icon(width="17" height="10")
+				use(href="img/images/sprite.svg#icon-arrow-down")
+
+		.filter__content.accordion__content
+			if props.list
+				+filterList(props.list)
+
+			if props.range
+				+filterRange()

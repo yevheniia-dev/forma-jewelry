@@ -17,6 +17,9 @@
 @use 'components/user-menu';
 @use 'components/product-card';
 @use 'components/accordion';
+@use 'components/filter';
+@use 'components/range';
+@use 'components/paginator';
 
 /* blocks */
 @use 'blocks/header';
@@ -26,7 +29,11 @@
 @use 'blocks/values';
 @use 'blocks/faq';
 @use 'blocks/gallery';
+@use 'blocks/catalog';
+@use 'blocks/products';
 @use 'blocks/footer';
 @use 'blocks/footer-nav';
 @use 'blocks/footer-social';
 @use 'blocks/form-footer';
+@use 'blocks/overlay';
+@use 'blocks/modal-login';

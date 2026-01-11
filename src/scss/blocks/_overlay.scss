@@ -1,0 +1,13 @@
+@use 'utils/variables' as vars;
+
+.overlay {
+	position: fixed;
+	inset: 0;
+	display: none;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: vars.$z-filter-overlay;
+
+	&--active {
+		display: block;
+	}
+}

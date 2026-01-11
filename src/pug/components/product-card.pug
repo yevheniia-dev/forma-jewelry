@@ -1,10 +1,14 @@
 mixin productCard(props)
   -
-    var baseClass = 'product-card'
-    var modClass = props.mod ? baseClass + '--' + props.mod : ''
-    var classes = modClass ? baseClass + ' ' + modClass : baseClass
+    var block = 'product-card'
+    var mod = props.mod ? ` ${block}--${props.mod}` : ''
+    var parent = props.parent ? ` ${props.parent}__product-card` : ''
+    var className = block + mod + parent
 
-  div(class=classes)
+    var title = props.title || ''
+    var price = props.price || ''
+
+  div(class=className)
     .product-card__image
       +picture({
         parent: 'product-card',

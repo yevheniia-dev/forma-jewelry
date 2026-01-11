@@ -1,0 +1,9 @@
+mixin filterRange()
+  .range(role="group" aria-label="Preisschieberegler")
+    label.visually-hidden(for="min") Mindestpreis
+    input#min(type="range" min="10" max="190" step="1" value="55")
+    output(for="min")
+
+    label.visually-hidden(for="max") Höchstpreis
+    input#max(type="range" min="10" max="190" step="1" value="155")
+    output(for="max")
