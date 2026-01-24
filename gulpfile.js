@@ -15,6 +15,7 @@ const browserSync = require('browser-sync').create();
 
 const webp = require('gulp-webp');
 const path = require('path');
+const ghPages = require('gh-pages');
 
 /* =========================
    PUG DATA HELPER (IMPORTANT)
@@ -138,6 +139,12 @@ function reload(done) {
 	browserSync.reload();
 	done();
 }
+
+function deploy(cb) {
+	ghPages.publish(path.join(process.cwd(), 'dist'), cb);
+}
+
+exports.deploy = deploy;
 
 /* build */
 exports.build = series(
