@@ -101,12 +101,11 @@ function copyImg() {
 
 /* images -> webp */
 function convertToWebp() {
-	return src('src/img/**/*.{jpg,jpeg,png}', { encoding: false })
-		.pipe(
-			webp({
-				quality: 90,
-			})
-		)
+	return src('src/img/**/*.{jpg,jpeg,png}', {
+		base: 'src/img',
+		encoding: false,
+	})
+		.pipe(webp({ quality: 90 }))
 		.pipe(dest(paths.img.dest));
 }
 
